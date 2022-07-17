@@ -13,6 +13,8 @@ function SalesCard() {
     const min = date
     const max = new Date();
 
+    const position = 
+
     const [minDate, setMinDate] = useState(min);
     const [maxDate, setMaxDate] = useState(max);
 
@@ -78,7 +80,7 @@ function SalesCard() {
                                         <td>
                                             <div className="dsmeta-red-btn-container">
                                                 <div className="dsmeta-red-btn">
-                                                    <NotificationButton />
+                                                    <NotificationButton saleId={sale.id} saleName={sale.sellerName} saleDate={sale.date} />
                                                 </div>
                                             </div>
                                         </td>

@@ -1,9 +1,29 @@
+import axios from 'axios';
 import icon from '../../assets/img/notification-icon.svg';
+import { BASE_URL } from '../../utils/request';
+import { Sale } from "../../models/sale";
 import './style.css'
-function NotificationButton() {
+
+type Props ={
+    saleId: number;
+    saleName: string;
+    saleDate: string;
+
+}
+
+function handleClick(id: number, name:string, date:string){
+    axios(`${BASE_URL}/sales/${id}/notification`)
+    .then(response =>{
+        const txtid = id.toString();
+        const data = new Date(date).toLocaleDateString()
+        alert("SMS de "+ txtid +" foi enviado com sucesso. Data da venda "+ data);
+    })
+}
+
+function NotificationButton({saleId,saleName,saleDate}: Props) {
     return (
 
-        <div className="dsmeta-red-btn">
+        <div className="dsmeta-red-btn" onClick={() => {handleClick(saleId,saleName,saleDate)}}>
             <img src={icon} alt="Notificar" />
         </div>
     )
