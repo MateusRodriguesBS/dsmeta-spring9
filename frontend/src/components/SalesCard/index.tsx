@@ -13,8 +13,6 @@ function SalesCard() {
     const min = date
     const max = new Date();
 
-    const position = 
-
     const [minDate, setMinDate] = useState(min);
     const [maxDate, setMaxDate] = useState(max);
 

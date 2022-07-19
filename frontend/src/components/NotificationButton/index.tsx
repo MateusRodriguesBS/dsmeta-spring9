@@ -14,9 +14,9 @@ type Props ={
 function handleClick(id: number, name:string, date:string){
     axios(`${BASE_URL}/sales/${id}/notification`)
     .then(response =>{
-        const txtid = id.toString();
-        const data = new Date(date).toLocaleDateString()
-        alert("SMS de "+ txtid +" foi enviado com sucesso. Data da venda "+ data);
+        var txtid = id.toString();
+        var data = new Date(date).toLocaleDateString()
+        alert("Sms enviado com sucesso do ID: "+txtid+", nome: "+name+ ", data da venda: "+data);
     })
 }
 
